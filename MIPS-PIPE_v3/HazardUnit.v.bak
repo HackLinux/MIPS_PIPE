@@ -1,0 +1,51 @@
+/*
+ * Unidade de Detecção de Hazard
+ */
+ module HazardUnit (
+	iNumRs, 
+	iNumRt, 
+	iEX_NumRt, 
+	iEX_MemRead,
+	iCJr,
+	iEX_RegDestino,
+	iMEM_RegDestino,
+	oBlockPC, 
+	oBlockIFID,
+	oFlushControl,
+	oFowardJr,
+	oFowardPC4
+);
+	input wire [4:0] iNumRs, iNumRt, iEX_NumRt, iEX_RegDestino, iMEM_RegDestino;
+	input wire iEX_MemRead, iCJr;
+	output wire oBlockPC, oBlockIFID, oFlushControl, oFowardJr, oFowardPC4;
+	
+	always @(iNumRs,iNumRt,iEX_NumRt,iEX_MemRead,iCJr,iEX_RegDestino,iMEM_RegDestino)
+	begin
+		if ((iEX_MemRead) && ((iEX_NumRt==iNumRs) | (iEX_NumRt==iNumRt)))
+		begin
+			oBlockPC <= 1;
+			oBlockIFID <= 1;
+			oFlushControl <= 1;
+		end
+		else begin
+			oBlockPC <= 0;
+			oBlockIFID <= 0;
+			oFlushControl <= 0;
+		end
+		
+		if ((iCJr) && (iEX_RegDestino==iNumRs)) begin
+			oFowardJr <= 1'b1;
+		end
+		else begin
+			oFowardJr <= 1'b0;
+		end
+		
+		if ((iCJr) && (iMEM_RegDestino==5'd31)) begin
+			oFowardPC4 <= 1'b1;
+		end
+		else begin
+			oFowardPC4 <= 1'b0;
+		end
+	end
+	
+endmodule

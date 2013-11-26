@@ -1,0 +1,51 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 00008020;  % 12: 	add $s0,$zero,$zero        # inicia contador %
+00000001 : 00008820;  % 13: 	add $s1,$zero,$zero	# zera resultado %
+00000002 : 00006020;  % 16: LW:	add $t4,$zero,$zero    # endereço da memoria de dados %
+00000003 : 8d890000;  % 20: 	lw $t1,0($t4) %
+00000004 : 8d8a0004;  % 21: 	lw $t2,4($t4) %
+00000005 : 8d8b0008;  % 22: 	lw $t3,8($t4) %
+00000006 : 012a4020;  % 24: ADD:	add $t0,$t1,$t2 %
+00000007 : ad8b000c;  % 26: SW:	sw $t3,12($t4) %
+00000008 : 8d8b000c;  % 27: 	lw $t3,12,($t4) %
+00000009 : 010b4022;  % 29: SUB:	sub $t0,$t0,$t3 %
+0000000a : 01484024;  % 31: AND:	and $t0,$t2,$t0 %
+0000000b : 01284025;  % 33: OR:	or $t0,$t1,$t0 %
+0000000c : 01484026;  % 35: XOR:	xor $t0,$t2,$t0 %
+0000000d : 01684027;  % 37: NOR:	nor $t0,$t3,$t0 %
+0000000e : 00084140;  % 39: SLL:	sll $t0,$t0,5 %
+0000000f : 21085a5a;  % 41: ADDI:	addi $t0,$t0,0x5a5a %
+00000010 : 00084142;  % 43: SRL:	srl $t0,$t0,5 %
+00000011 : 31089999;  % 45: ANDI:	andi $t0,$t0,0x9999 %
+00000012 : 35089696;  % 47: ORI:	ori $t0,$t0,0x9696 %
+00000013 : 39086666;  % 49: XORI:	xori $t0,$t0,0x6666 %
+00000014 : 0109682a;  % 51: SLT:	slt $t5,$t0,$t1 %
+00000015 : 11a00002;  % 53: BEQV:	beq $t5,$zero, PULA %
+00000016 : 01094020;  % 55: PULA1:	add $t0,$t0,$t1	 %
+00000017 : 0800001a;  % 57: J:	j MULT %
+00000018 : 010a4020;  % 59: PULA:	add $t0,$t0,$t2 %
+00000019 : 11a8fffc;  % 61: BEQF:	beq $t5,$t0,PULA1 %
+0000001a : 01080018;  % 63: MULT: 	mult $t0,$t0 %
+0000001b : 00004012;  % 65: MFHI:	mflo $t0 %
+0000001c : 010a001a;  % 67: DIV:	div $t0,$t2 %
+0000001d : 00009810;  % 69: MFLO: 	mfhi $s3 %
+0000001e : 3c12ffff;  % 71: 	lui $s2,0xffff %
+0000001f : 36528986;  % 73: 	ori $s2,$s2,0x8986 %
+00000020 : 0c000028;  % 75: 	jal CONTADOR %
+00000021 : 12720003;  % 77: 	beq $s3,$s2, CORRETO %
+00000022 : 3c11eeee;  % 79: ERRO:   lui $s1,0xEEEE %
+00000023 : 3631eeee;  % 81: 	ori $s1,0xEEEE %
+00000024 : 08000002;  % 82: 	j INICIO %
+00000025 : 3c11cccc;  % 84: CORRETO: lui $s1,0xCCCC %
+00000026 : 3631cccc;  % 86: 	 ori $s1,$s1,0xCCCC %
+00000027 : 08000002;  % 88: 	j INICIO %
+00000028 : 22100001;  % 91: 	addi $s0,$s0,1 %
+00000029 : 03e00008;  % 92: 	jr $ra %
+
+END;

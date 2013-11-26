@@ -1,0 +1,156 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.728 ns
+From           : iSW[10]
+To             : mono:Mono1|contador[29]
+From Clock     : --
+To Clock       : iCLK_50
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 27.988 ns
+From           : MIPS2:Processor0|RegIFID[18]
+To             : oHEX0_D[0]
+From Clock     : iCLK_50
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 23.383 ns
+From           : iSW[16]
+To             : oHEX2_D[4]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 4.834 ns
+From           : I2C_SDAT
+To             : I2C_AV_Config:u3|I2C_Controller:u0|ACK3
+From Clock     : --
+To Clock       : iCLK_50
+Failed Paths   : 0
+
+Type           : Clock Setup: 'iCLK_50'
+Slack          : -114.275 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 7.45 MHz ( period = 134.275 ns )
+From           : MIPS2:Processor0|RegMEMWB[3]
+To             : MIPS2:Processor0|ALU:ALUunit|HI[29]
+From Clock     : iCLK_50
+To Clock       : iCLK_50
+Failed Paths   : 124750
+
+Type           : Clock Setup: 'VGA_Audio_PLL:p1|altpll:altpll_component|_clk1'
+Slack          : 26.706 ns
+Required Time  : 18.00 MHz ( period = 55.555 ns )
+Actual Time    : 466.42 MHz ( period = 2.144 ns )
+From           : audio_converter:u5|AUD_inL[7]
+To             : waudio_inL[7]
+From Clock     : VGA_Audio_PLL:p1|altpll:altpll_component|_clk1
+To Clock       : VGA_Audio_PLL:p1|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|VgaPll:xx|altpll:altpll_component|_clk0'
+Slack          : 28.772 ns
+Required Time  : 25.00 MHz ( period = 40.000 ns )
+Actual Time    : 89.06 MHz ( period = 11.228 ns )
+From           : VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|yCounter[2]
+To             : VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|MemoryVGA:memVGA|altsyncram:altsyncram_component|altsyncram_jd92:auto_generated|ram_block1a102~porta_address_reg11
+From Clock     : VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|VgaPll:xx|altpll:altpll_component|_clk0
+To Clock       : VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|VgaPll:xx|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 79.10 MHz ( period = 12.642 ns )
+From           : MIPS2:Processor0|CodeMemory:memInstr|UserCodeBlock:MB0|altsyncram:altsyncram_component|altsyncram_2ik1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[0]
+To             : sld_hub:auto_hub|tdo
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'iKEY[1]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 450.05 MHz ( period = 2.222 ns )
+From           : CLKSelectFast
+To             : CLKSelectFast
+From Clock     : iKEY[1]
+To Clock       : iKEY[1]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'iKEY[2]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 450.05 MHz ( period = 2.222 ns )
+From           : CLKSelectAuto
+To             : CLKSelectAuto
+From Clock     : iKEY[2]
+To Clock       : iKEY[2]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'iKEY[3]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 450.05 MHz ( period = 2.222 ns )
+From           : CLKManual
+To             : CLKManual
+From Clock     : iKEY[3]
+To Clock       : iKEY[3]
+Failed Paths   : 0
+
+Type           : Clock Hold: 'iCLK_50'
+Slack          : -3.571 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : MIPS2:Processor0|DataMemory:memData|SysDataBlock:MB1|altsyncram:altsyncram_component|altsyncram_5jk1:auto_generated|altsyncram_c1g2:altsyncram1|q_a[4]
+To             : MIPS2:Processor0|RegMEMWB[41]
+From Clock     : iCLK_50
+To Clock       : iCLK_50
+Failed Paths   : 164
+
+Type           : Clock Hold: 'VGA_Audio_PLL:p1|altpll:altpll_component|_clk1'
+Slack          : 0.391 ns
+Required Time  : 18.00 MHz ( period = 55.555 ns )
+Actual Time    : N/A
+From           : audio_converter:u5|AUD_inL[4]
+To             : audio_converter:u5|AUD_inL[4]
+From Clock     : VGA_Audio_PLL:p1|altpll:altpll_component|_clk1
+To Clock       : VGA_Audio_PLL:p1|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Clock Hold: 'VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|VgaPll:xx|altpll:altpll_component|_clk0'
+Slack          : 0.515 ns
+Required Time  : 25.00 MHz ( period = 40.000 ns )
+Actual Time    : N/A
+From           : VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|MemoryVGA:memVGA|altsyncram:altsyncram_component|altsyncram_jd92:auto_generated|address_reg_a[4]
+To             : VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|MemoryVGA:memVGA|altsyncram:altsyncram_component|altsyncram_jd92:auto_generated|out_address_reg_a[4]
+From Clock     : VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|VgaPll:xx|altpll:altpll_component|_clk0
+To Clock       : VgaAdapterInterface:VGAAI0|VgaAdapter:VGAAd0|VgaPll:xx|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 124914
+
+--------------------------------------------------------------------------------------
+

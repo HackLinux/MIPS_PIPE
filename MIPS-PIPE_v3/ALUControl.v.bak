@@ -1,0 +1,81 @@
+/*
+ * ALUcontrol.v
+ *
+ * Arithmetic Logic Unit control module.
+ * Generates control signal to the ALU depending on the opcode and the funct field in the
+ * current operation and on the signal sent by the processor control module.
+ *
+ * ALUOp	|	Control signal
+ * -------------------------------------------
+ * 00		|	The ALU performs an add operation.
+ * 01		|	The ALU performs a subtract operation.
+ * 10		|	The funct field determines the ALU operation.
+ * 11		|	The opcode field determines the ALU operation.
+ */
+module ALUControl (iFunct, iOpcode, iALUOp, oControlSignal);
+
+
+/* I/O type definition */
+input wire [5:0] iFunct, iOpcode;
+input wire [1:0] iALUOp;
+output reg [3:0] oControlSignal;
+
+always @(iFunct, iALUOp)
+begin
+	case (iALUOp)
+		2'b00:
+			oControlSignal <=	OPADD;
+		2'b01:
+			oControlSignal <=	OPSUB;
+		2'b10:
+			begin
+				case (iFunct)
+					FUNSLL:
+						oControlSignal <= OPSLL;
+					FUNSRL:
+						oControlSignal <= OPSRL;
+					FUNADD:
+						oControlSignal <= OPADD;
+					FUNSUB:
+						oControlSignal <= OPSUB;
+					FUNAND:
+						oControlSignal <= OPAND;
+					FUNOR:
+						oControlSignal <= OPOR;
+					FUNXOR:
+						oControlSignal <= OPXOR;
+					FUNNOR:
+						oControlSignal <= OPNOR;
+					FUNSLT:
+						oControlSignal <= OPSLT;
+					FUNMFHI:
+						oControlSignal <= OPMFHI;
+					FUNMFLO:
+						oControlSignal <= OPMFLO;
+					FUNMULT:
+						oControlSignal <= OPMULT;
+					FUNDIV:
+						oControlSignal <= OPDIV;
+					default:
+						oControlSignal <= 4'b0000;
+				endcase
+			end
+		2'b11:
+			begin
+				case (iOpcode)
+					OPCADDI:
+						oControlSignal <= OPADD;
+					OPCANDI: 
+						oControlSignal <= OPAND;
+					OPCXORI:
+						oControlSignal <= OPXOR;
+					OPCORI:
+						oControlSignal <= OPOR;
+					default:
+						oControlSignal <= 4'b0000;
+				endcase
+			end
+	endcase
+end
+
+endmodule

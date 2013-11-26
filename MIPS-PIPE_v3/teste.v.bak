@@ -1,0 +1,114 @@
+module teste(iCLK50, iCLK, oCLK,//OK
+	iRST, oresert, //OK
+	wPC, //OK
+	wCRegDst, //OK
+	wCOrigALU,  //OK
+	wCMem2Reg,  //OK
+	wCRegWrite,  //OK
+	wCMemRead,  //OK
+	wCMemWrite,  //OK
+	wCOrigPC, //OK
+	wCJump, //OK
+	wCBranch, //OK
+	wCJr, //OK
+	wOpcode, //OK
+	wFunct, //OK
+	wRegDispSelect, //OK
+	wiRegA0, //OK
+	wCInputA0En, //OK
+	wRegDisp, //OK
+	wCALUOp, //OK
+	woInstr, //OK
+	wDebug, //OK
+	wMEM_ResultALU, 
+	wMEM_ResultFowardB,
+	wMEM_MemWrite
+);
+
+
+input wire	iCLK50, iCLK, iRST;//clocks e o reset
+output wire oreset;
+input wire [4:0] wRegDispSelect;
+input wire [31:0] wiRegA0;
+input wire wCInputA0En;
+output wire [31:0] wDebug;
+output wire [31:0] wPC, wRegDisp,woInstr;
+output wire  wCRegWrite, wCMemRead, wCMemWrite, wCJump,wCBranch, wCJr;
+output wire [1:0] wCALUOp, wCOrigALU, wCRegDst, wCMem2Reg, wCOrigPC;
+output wire [5:0] wOpcode, wFunct;
+output wire [31:0] wMEM_ResultALU;
+output wire [31:0] wMEM_ResultFowardB;
+output wMEM_MemWrite,oCLK;
+
+wire locked;
+
+assign oreset = ~locked || iRST;
+
+pll pll1 (
+	.inclk0(iCLK50),
+	.c0(oCLK),
+	.locked(locked));
+
+
+
+
+/* MIPS Datapath instantiation */
+MIPS Processor0 (
+	.iCLK(iCLK),
+	.iCLKMem(oCLK),
+	.iCLK50(oCLK), 
+	.iRST(oreset), 
+	.wPC(wPC), 
+	.wCRegDst(wCRegDst),
+	.wCOrigALU(wCOrigALU),
+	.wCMem2Reg(wCMem2Reg),
+	.wCRegWrite(wCRegWrite),
+	.wCMemRead(wCMemRead),
+	.wCMemWrite(wCMemWrite),
+	.wCOrigPC(wCOrigPC), 
+	.wCJump(wCJump),
+	.wCBranch(wCBranch), 
+	.wCJr(wCJr),
+	.wOpcode(wOpcode),
+	.wFunct(wFunct),
+	.wRegDispSelect(wRegDispSelect),
+	.wiRegA0(wiRegA0),
+	.wCInputA0En(wCInputA0En),
+	.wRegDisp(wRegDisp),
+	.wCALUOp(wCALUOp),
+	.woInstr(woInstr),
+	.wDebug(wDebug),
+	.wMEM_ResultALU(wMEM_ResultALU), 
+	.wMEM_ResultFowardB(wMEM_ResultFowardB),
+	.wMEM_MemWrite(wMEM_MemWrite)
+);
+
+/*
+MIPS Processor0 (
+	.iCLK(iCLK),
+	.iCLKMem(oCLK),
+	.iCLK50(oCLK),
+	.iRST(iRST),
+	.wiRegA0(wRegA0),
+	.wCInputA0En(wCInputA0En),
+	.wPC(wPC),
+	.wCALUOp(wCALUOp),
+	.wCMemWrite(wCMemWrite),
+	.wCMemRead(wCMemRead),
+	.wCRegWrite(RegWrite),
+	.wCRegDst(wCRegDst),
+	.wRegDispSelect(wRegDispSelect),
+	.wRegDisp(wRegDisp),
+	.wOpcode(wOpcode),
+	.wFunct(wFunct),
+	.woInstr(woInstr),
+	.wCOrigALU(wCOrigALU),
+	.wCMem2Reg(wCMem2Reg),
+	.wCOrigPC(wCOrigPC),
+	.wDebug(wDebug),
+	.wMEM_ResultALU(wMEM_ResultALU), 
+	.wMEM_ResultFowardB(wMEM_ResultFowardB),
+	.wMEM_MemWrite(wMEM_MemWrite)
+	);*/
+
+endmodule

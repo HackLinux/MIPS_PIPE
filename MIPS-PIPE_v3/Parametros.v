@@ -1,0 +1,62 @@
+/* Parametros gerais */
+
+parameter
+	ON   = 1'b1,
+	OFF  = 1'b0,
+	ZERO = 32'h0,
+
+	/* Operacoes da ULA */
+	OPAND  = 4'b0000,
+	OPOR   = 4'b0001,
+	OPADD  = 4'b0010,
+	OPMFHI = 4'b0011,
+	OPSLL  = 4'b0100,
+	OPMFLO = 4'b0101,
+	OPSUB  = 4'b0110,
+	OPSLT  = 4'b0111,
+	OPSRL  = 4'b1000,
+	OPSRA  = 4'b1001,
+	OPXOR  = 4'b1010,
+	OPSLTU = 4'b1011,
+	OPNOR  = 4'b1100,
+	OPMULT = 4'b1101,
+	OPDIV  = 4'b1110,
+	OPLUI  = 4'b1111,
+
+	/* Campo FUNCT */
+	FUNSLL  = 6'h00,
+	FUNSRL  = 6'h02,
+	FUNSRA  = 6'h03,
+	FUNJR   = 6'h08,
+	FUNSYS  = 6'h0C,
+	FUNMFHI = 6'h10,
+	FUNMFLO = 6'h12,
+	FUNMULT = 6'h18,
+	FUNDIV  = 6'h1A,
+	FUNADD  = 6'h20,
+	FUNADDU = 6'h21,
+	FUNSUB  = 6'h22,
+	FUNSUBU = 6'h23,
+	FUNAND  = 6'h24,
+	FUNOR   = 6'h25,
+	FUNXOR  = 6'h26,
+	FUNNOR  = 6'h27,
+	FUNSLT  = 6'h2A,
+	FUNSLTU = 6'h2B,
+
+	/* Campo OPCODE */
+	OPCRFMT  = 6'h00, /* Tipo-R */
+	OPCJMP   = 6'h02,
+	OPCJAL   = 6'h03,
+	OPCBEQ   = 6'h04,
+	OPCBNE   = 6'h05,
+	OPCADDI  = 6'h08,
+	OPCADDIU = 6'h09,
+	OPCSLTI  = 6'h0A,
+	OPCSLTIU = 6'h0B,
+	OPCANDI  = 6'h0C,
+	OPCORI   = 6'h0D,
+	OPCXORI  = 6'h0E,
+	OPCLUI   = 6'h0F,
+	OPCLW    = 6'h23,
+	OPCSW    = 6'h2B;

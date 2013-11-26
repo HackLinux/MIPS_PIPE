@@ -1,0 +1,7 @@
+Warning (10268): Verilog HDL information at keyboard.v(47): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at ALU.v(67): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at TopDE.v(430): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at TopDE.v(442): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at TopDE.v(495): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at TopDE.v(414): object "Ctrl1" differs only in case from object "CTRL1" in the same scope
+Info (10281): Verilog HDL Declaration information at TopDE.v(414): object "Ctrl2" differs only in case from object "CTRL2" in the same scope

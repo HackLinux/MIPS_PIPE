@@ -1,0 +1,577 @@
+PowerPlay Power Analyzer report for TopDE
+Sun May 13 02:07:19 2012
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. PowerPlay Power Analyzer Summary
+  3. PowerPlay Power Analyzer Settings
+  4. Indeterminate Toggle Rates
+  5. Operating Conditions Used
+  6. Thermal Power Dissipation by Block
+  7. Thermal Power Dissipation by Block Type
+  8. Thermal Power Dissipation by Hierarchy
+  9. Core Dynamic Thermal Power Dissipation by Clock Domain
+ 10. Current Drawn from Voltage Supplies Summary
+ 11. VCCIO Supply Current Drawn by I/O Bank
+ 12. VCCIO Supply Current Drawn by Voltage
+ 13. Confidence Metric Details
+ 14. Signal Activities
+ 15. PowerPlay Power Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------+
+; PowerPlay Power Analyzer Summary                                                          ;
++----------------------------------------+--------------------------------------------------+
+; PowerPlay Power Analyzer Status        ; Successful - Sun May 13 02:07:19 2012            ;
+; Quartus II Version                     ; 9.1 Build 222 10/21/2009 SJ Web Edition          ;
+; Revision Name                          ; TopDE                                            ;
+; Top-level Entity Name                  ; MIPS                                             ;
+; Family                                 ; Cyclone II                                       ;
+; Device                                 ; EP2C70F896C6                                     ;
+; Power Models                           ; Final                                            ;
+; Total Thermal Power Dissipation        ; 224.50 mW                                        ;
+; Core Dynamic Thermal Power Dissipation ; 0.00 mW                                          ;
+; Core Static Thermal Power Dissipation  ; 155.06 mW                                        ;
+; I/O Thermal Power Dissipation          ; 69.44 mW                                         ;
+; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
++----------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; PowerPlay Power Analyzer Settings                                                                    ;
++----------------------------------------------------------------------------+---------+---------------+
+; Option                                                                     ; Setting ; Default Value ;
++----------------------------------------------------------------------------+---------+---------------+
+; Use smart compilation                                                      ; Off     ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On      ; On            ;
+; Enable compact report table                                                ; Off     ; Off           ;
+; Default Power Toggle Rate                                                  ; 12.5%   ; 12.5%         ;
+; Default Power Input I/O Toggle Rate                                        ; 12.5%   ; 12.5%         ;
+; Use vectorless estimation                                                  ; On      ; On            ;
+; Use Input Files                                                            ; Off     ; Off           ;
+; Filter Glitches in VCD File Reader                                         ; On      ; On            ;
+; Power Analyzer Report Signal Activity                                      ; Off     ; Off           ;
+; Power Analyzer Report Power Dissipation                                    ; Off     ; Off           ;
+; Device Power Characteristics                                               ; TYPICAL ; TYPICAL       ;
+; Automatically Compute Junction Temperature                                 ; On      ; On            ;
+; Specified Junction Temperature                                             ; 25      ; 25            ;
+; Ambient Temperature                                                        ; 25      ; 25            ;
+; Use Custom Cooling Solution                                                ; Off     ; Off           ;
+; Board Temperature                                                          ; 25      ; 25            ;
++----------------------------------------------------------------------------+---------+---------------+
+
+
++-------------------------------------------------+
+; Indeterminate Toggle Rates                      ;
++-------------------+-----------------------------+
+; Node              ; Reason                      ;
++-------------------+-----------------------------+
+; iCLK50            ; No valid clock domain found ;
+; wRegDispSelect[1] ; No valid clock domain found ;
+; wRegDispSelect[2] ; No valid clock domain found ;
+; wRegDispSelect[4] ; No valid clock domain found ;
+; wRegDispSelect[3] ; No valid clock domain found ;
+; wRegDispSelect[0] ; No valid clock domain found ;
+; wiRegA0[0]        ; No valid clock domain found ;
+; wiRegA0[1]        ; No valid clock domain found ;
+; wiRegA0[2]        ; No valid clock domain found ;
+; wiRegA0[3]        ; No valid clock domain found ;
+; wiRegA0[4]        ; No valid clock domain found ;
+; wiRegA0[5]        ; No valid clock domain found ;
+; wiRegA0[6]        ; No valid clock domain found ;
+; wiRegA0[7]        ; No valid clock domain found ;
+; wiRegA0[8]        ; No valid clock domain found ;
+; wiRegA0[9]        ; No valid clock domain found ;
+; wiRegA0[10]       ; No valid clock domain found ;
+; wiRegA0[11]       ; No valid clock domain found ;
+; wiRegA0[12]       ; No valid clock domain found ;
+; wiRegA0[13]       ; No valid clock domain found ;
+; wiRegA0[14]       ; No valid clock domain found ;
+; wiRegA0[15]       ; No valid clock domain found ;
+; wiRegA0[16]       ; No valid clock domain found ;
+; wiRegA0[17]       ; No valid clock domain found ;
+; wiRegA0[18]       ; No valid clock domain found ;
+; wiRegA0[19]       ; No valid clock domain found ;
+; wiRegA0[20]       ; No valid clock domain found ;
+; wiRegA0[21]       ; No valid clock domain found ;
+; wiRegA0[22]       ; No valid clock domain found ;
+; wiRegA0[23]       ; No valid clock domain found ;
+; wiRegA0[24]       ; No valid clock domain found ;
+; wiRegA0[25]       ; No valid clock domain found ;
+; wiRegA0[26]       ; No valid clock domain found ;
+; wiRegA0[27]       ; No valid clock domain found ;
+; wiRegA0[28]       ; No valid clock domain found ;
+; wiRegA0[29]       ; No valid clock domain found ;
+; wiRegA0[30]       ; No valid clock domain found ;
+; wiRegA0[31]       ; No valid clock domain found ;
+; iCLK              ; No valid clock domain found ;
+; iRST              ; No valid clock domain found ;
+; wCInputA0En       ; No valid clock domain found ;
+; iCLKMem           ; No valid clock domain found ;
++-------------------+-----------------------------+
+
+
++-------------------------------------------------------------------------+
+; Operating Conditions Used                                               ;
++---------------------------------------------+---------------------------+
+; Setting                                     ; Value                     ;
++---------------------------------------------+---------------------------+
+; Device power characteristics                ; Typical                   ;
+;                                             ;                           ;
+; Voltages                                    ;                           ;
+;     VCCINT                                  ; 1.20 V                    ;
+;     3.3-V LVTTL I/O Standard                ; 3.3 V                     ;
+;                                             ;                           ;
+; Auto computed junction temperature          ; 26.0 degrees Celsius      ;
+;     Ambient temperature                     ; 25.0 degrees Celsius      ;
+;     Junction-to-Case thermal resistance     ; 2.10 degrees Celsius/Watt ;
+;     Case-to-Heat Sink thermal resistance    ; 0.10 degrees Celsius/Watt ;
+;     Heat Sink-to-Ambient thermal resistance ; 2.10 degrees Celsius/Watt ;
+;                                             ;                           ;
+; Board model used                            ; None                      ;
++---------------------------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block                                                                                                           ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+; Block Name ; Block Type ; Total Thermal Power ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+(1) The "Thermal Power Dissipation by Block" Table has been hidden. To show this table, please select the "Write power dissipation by block to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block Type                                                                                                                                                                                   ;
++----------------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; Block Type                 ; Total Thermal Power by Block Type ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ; Block Average Toggle Rate (millions of transitions / sec) ;
++----------------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; JTAG                       ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
+; I/O                        ; 31.57 mW                          ; 0.00 mW                     ; 31.57 mW                       ; 0.00 mW                       ;    0.000                                                  ;
+; M4K                        ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
+; Embedded multiplier block  ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
+; Embedded multiplier output ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
+; Combinational cell         ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
+; Register cell              ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
+; Clock control block        ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
++----------------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+(1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Hierarchy                                                                                                                                                                                                                                                                                                                                                                                 ;
++-----------------------------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Compilation Hierarchy Node                                                  ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                                                                                                                                                     ;
++-----------------------------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; |MIPS                                                                       ; 31.57 mW (31.57 mW)                  ; 0.00 mW (0.00 mW)               ; 31.57 mW (31.57 mW)               ; 0.00 mW (0.00 mW)                 ; |MIPS                                                                                                                                                                                   ;
+;     |ALUControl:ALUControlunit                                              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALUControl:ALUControlunit                                                                                                                                                         ;
+;     |ALU:ALUunit                                                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit                                                                                                                                                                       ;
+;         |lpm_divide:Div0                                                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_divide:Div0                                                                                                                                                       ;
+;             |lpm_divide_vfm:auto_generated                                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_divide:Div0|lpm_divide_vfm:auto_generated                                                                                                                         ;
+;                 |sign_div_unsign_9nh:divider                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_divide:Div0|lpm_divide_vfm:auto_generated|sign_div_unsign_9nh:divider                                                                                             ;
+;                     |alt_u_div_k5f:divider                                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_divide:Div0|lpm_divide_vfm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider                                                                       ;
+;         |lpm_divide:Mod0                                                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_divide:Mod0                                                                                                                                                       ;
+;             |lpm_divide_28m:auto_generated                                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                                                                                         ;
+;                 |sign_div_unsign_9nh:divider                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                                                                                             ;
+;                     |alt_u_div_k5f:divider                                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider                                                                       ;
+;                         |add_sub_mkc:add_sub_1                              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|add_sub_mkc:add_sub_1                                                 ;
+;         |lpm_mult:Mult0                                                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_mult:Mult0                                                                                                                                                        ;
+;             |mult_l8t:auto_generated                                        ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|ALU:ALUunit|lpm_mult:Mult0|mult_l8t:auto_generated                                                                                                                                ;
+;     |Control:Controlunit                                                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|Control:Controlunit                                                                                                                                                               ;
+;     |sld_hub:auto_hub                                                       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|sld_hub:auto_hub                                                                                                                                                                  ;
+;         |sld_rom_sr:hub_info_reg                                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|sld_hub:auto_hub|sld_rom_sr:hub_info_reg                                                                                                                                          ;
+;         |sld_shadow_jsm:shadow_jsm                                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|sld_hub:auto_hub|sld_shadow_jsm:shadow_jsm                                                                                                                                        ;
+;     |FowardUnit:fUnit                                                       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|FowardUnit:fUnit                                                                                                                                                                  ;
+;     |HazardUnit:hUnit                                                       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|HazardUnit:hUnit                                                                                                                                                                  ;
+;     |DataMemory:memData                                                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData                                                                                                                                                                ;
+;         |UserDataBlock:MB0                                                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0                                                                                                                                              ;
+;             |altsyncram:altsyncram_component                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component                                                                                                              ;
+;                 |altsyncram_mpi1:auto_generated                             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_mpi1:auto_generated                                                                               ;
+;                     |altsyncram_bae2:altsyncram1                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_mpi1:auto_generated|altsyncram_bae2:altsyncram1                                                   ;
+;                         |decode_4oa:decode4                                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_mpi1:auto_generated|altsyncram_bae2:altsyncram1|decode_4oa:decode4                                ;
+;                         |decode_4oa:decode5                                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_mpi1:auto_generated|altsyncram_bae2:altsyncram1|decode_4oa:decode5                                ;
+;                         |decode_4oa:decode_a                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_mpi1:auto_generated|altsyncram_bae2:altsyncram1|decode_4oa:decode_a                               ;
+;                         |mux_1kb:mux6                                       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_mpi1:auto_generated|altsyncram_bae2:altsyncram1|mux_1kb:mux6                                      ;
+;                         |mux_1kb:mux7                                       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_mpi1:auto_generated|altsyncram_bae2:altsyncram1|mux_1kb:mux7                                      ;
+;                     |sld_mod_ram_rom:mgl_prim2                              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_mpi1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                     ;
+;                         |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|UserDataBlock:MB0|altsyncram:altsyncram_component|altsyncram_mpi1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr  ;
+;         |SysDataBlock:MB1                                                   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|SysDataBlock:MB1                                                                                                                                               ;
+;             |altsyncram:altsyncram_component                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|SysDataBlock:MB1|altsyncram:altsyncram_component                                                                                                               ;
+;                 |altsyncram_nhi1:auto_generated                             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|SysDataBlock:MB1|altsyncram:altsyncram_component|altsyncram_nhi1:auto_generated                                                                                ;
+;                     |altsyncram_uvd2:altsyncram1                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|SysDataBlock:MB1|altsyncram:altsyncram_component|altsyncram_nhi1:auto_generated|altsyncram_uvd2:altsyncram1                                                    ;
+;                     |sld_mod_ram_rom:mgl_prim2                              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|SysDataBlock:MB1|altsyncram:altsyncram_component|altsyncram_nhi1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                      ;
+;                         |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|DataMemory:memData|SysDataBlock:MB1|altsyncram:altsyncram_component|altsyncram_nhi1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr   ;
+;     |CodeMemory:memInstr                                                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr                                                                                                                                                               ;
+;         |UserCodeBlock:MB0                                                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|UserCodeBlock:MB0                                                                                                                                             ;
+;             |altsyncram:altsyncram_component                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|UserCodeBlock:MB0|altsyncram:altsyncram_component                                                                                                             ;
+;                 |altsyncram_1oi1:auto_generated                             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|UserCodeBlock:MB0|altsyncram:altsyncram_component|altsyncram_1oi1:auto_generated                                                                              ;
+;                     |altsyncram_27e2:altsyncram1                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|UserCodeBlock:MB0|altsyncram:altsyncram_component|altsyncram_1oi1:auto_generated|altsyncram_27e2:altsyncram1                                                  ;
+;                     |sld_mod_ram_rom:mgl_prim2                              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|UserCodeBlock:MB0|altsyncram:altsyncram_component|altsyncram_1oi1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                    ;
+;                         |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|UserCodeBlock:MB0|altsyncram:altsyncram_component|altsyncram_1oi1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr ;
+;         |SysCodeBlock:MB1                                                   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|SysCodeBlock:MB1                                                                                                                                              ;
+;             |altsyncram:altsyncram_component                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|SysCodeBlock:MB1|altsyncram:altsyncram_component                                                                                                              ;
+;                 |altsyncram_mhi1:auto_generated                             ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|SysCodeBlock:MB1|altsyncram:altsyncram_component|altsyncram_mhi1:auto_generated                                                                               ;
+;                     |altsyncram_vvd2:altsyncram1                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|SysCodeBlock:MB1|altsyncram:altsyncram_component|altsyncram_mhi1:auto_generated|altsyncram_vvd2:altsyncram1                                                   ;
+;                     |sld_mod_ram_rom:mgl_prim2                              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|SysCodeBlock:MB1|altsyncram:altsyncram_component|altsyncram_mhi1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                     ;
+;                         |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|CodeMemory:memInstr|SysCodeBlock:MB1|altsyncram:altsyncram_component|altsyncram_mhi1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr  ;
+;     |Registers:memReg                                                       ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |MIPS|Registers:memReg                                                                                                                                                                  ;
++-----------------------------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+(1) Value in parentheses is the power consumed at that level of hierarchy. Value not in parentheses is the power consumed at that level of hierarchy plus the power consumed by all levels of hierarchy below it.
+
+(2) The "Block Thermal Static Power" for all levels of hierarchy except the top-level hierarchy is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++---------------------------------------------------------------------------------+
+; Core Dynamic Thermal Power Dissipation by Clock Domain                          ;
++------------------------------+-----------------------+--------------------------+
+; Clock Domain                 ; Clock Frequency (MHz) ; Total Core Dynamic Power ;
++------------------------------+-----------------------+--------------------------+
+; iCLK                         ; Unspecified           ; 0.00                     ;
+; iCLKMem                      ; Unspecified           ; 0.00                     ;
+; altera_internal_jtag~TCKUTAP ; Unspecified           ; 0.00                     ;
+; No clock domain              ; 0.00                  ; 0.00                     ;
++------------------------------+-----------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Current Drawn from Voltage Supplies Summary                                                                                        ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCINT         ; 145.82 mA               ; 0.00 mA                   ; 145.82 mA                ; 145.82 mA                        ;
+; VCCIO          ; 15.00 mA                ; 0.00 mA                   ; 15.00 mA                 ; 15.00 mA                         ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for  power-up, configuration, and user operation of the device.
+
+
++-----------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by I/O Bank                                                        ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; I/O Bank ; VCCIO Voltage ; Total Current Drawn ; Dynamic Current Drawn ; Static Current Drawn ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; 1        ; 3.3V          ; 1.55 mA             ; 0.00 mA               ; 1.55 mA              ;
+; 2        ; 3.3V          ; 1.89 mA             ; 0.00 mA               ; 1.89 mA              ;
+; 3        ; 3.3V          ; 1.93 mA             ; 0.00 mA               ; 1.93 mA              ;
+; 4        ; 3.3V          ; 2.10 mA             ; 0.00 mA               ; 2.10 mA              ;
+; 5        ; 3.3V          ; 2.18 mA             ; 0.00 mA               ; 2.18 mA              ;
+; 6        ; 3.3V          ; 1.67 mA             ; 0.00 mA               ; 1.67 mA              ;
+; 7        ; 3.3V          ; 1.95 mA             ; 0.00 mA               ; 1.95 mA              ;
+; 8        ; 3.3V          ; 1.72 mA             ; 0.00 mA               ; 1.72 mA              ;
++----------+---------------+---------------------+-----------------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by Voltage                                                                                             ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCIO Voltage ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; 3.3V          ; 15.00 mA                ; 0.00 mA                   ; 15.00 mA                 ; 15.00 mA                         ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for  power-up, configuration, and user operation of the device.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Confidence Metric Details                                                                                                                            ;
++----------------------------------------------------------------------------------------+---------------+-------------+---------------+---------------+
+; Data Source                                                                            ; Total         ; Pin         ; Registered    ; Combinational ;
++----------------------------------------------------------------------------------------+---------------+-------------+---------------+---------------+
+; Simulation (from file)                                                                 ;               ;             ;               ;               ;
+;     -- Number of signals with Toggle Rate from Simulation                              ; 0 (0.0%)      ; 0 (0.0%)    ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)      ; 0 (0.0%)    ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;               ;             ;               ;               ;
+; Node, entity or clock assignment                                                       ;               ;             ;               ;               ;
+;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 0 (0.0%)      ; 0 (0.0%)    ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 0 (0.0%)      ; 0 (0.0%)    ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;               ;             ;               ;               ;
+; Vectorless estimation                                                                  ;               ;             ;               ;               ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 11440 (99.6%) ; 222 (82.5%) ; 2098 (100.0%) ; 9120 (100.0%) ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 177 (1.5%)    ; 33 (12.3%)  ; 26 (1.2%)     ; 118 (1.3%)    ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 11440 (99.6%) ; 222 (82.5%) ; 2098 (100.0%) ; 9120 (100.0%) ;
+;                                                                                        ;               ;             ;               ;               ;
+; Default assignment                                                                     ;               ;             ;               ;               ;
+;     -- Number of signals with Toggle Rate from Default assignment                      ; 0 (0.0%)      ; 0 (0.0%)    ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Default assignment               ; 47 (0.4%)     ; 47 (17.5%)  ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;               ;             ;               ;               ;
+; Assumed 0                                                                              ;               ;             ;               ;               ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 47 (0.4%)     ; 47 (17.5%)  ; 0 (0.0%)      ; 0 (0.0%)      ;
++----------------------------------------------------------------------------------------+---------------+-------------+---------------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Activities                                                                                                                           ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+; Signal ; Type ; Toggle Rate (millions of transitions / sec) ; Toggle Rate Data Source ; Static Probability ; Static Probability Data Source ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+(1) The "Signal Activity" Table has been hidden. To show this table, please select the "Write signal activities to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++-----------------------------------+
+; PowerPlay Power Analyzer Messages ;
++-----------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II PowerPlay Power Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Sun May 13 02:07:09 2012
+Info: Command: quartus_pow --read_settings_files=on --write_settings_files=off MIPS-PIPE_v2 -c TopDE
+Info: Low junction temperature is 0 degrees C
+Info: High junction temperature is 85 degrees C
+Info: Starting Vectorless Power Activity Estimation
+Warning: Relative toggle rates could not be calculated because no clock domain could be identified for some nodes
+Info: Completed Vectorless Power Activity Estimation
+Warning: No board thermal model was selected.  Analyzing without board thermal modeling.
+Warning: Found 221 output pins without output pin load capacitance assignment
+    Warning: Pin "wPC[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wPC[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCRegDst[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCRegDst[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCOrigALU[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCOrigALU[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCMem2Reg[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCMem2Reg[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCRegWrite" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCMemRead" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCMemWrite" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCOrigPC[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCOrigPC[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCJump" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCBranch" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCJr" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wOpcode[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wOpcode[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wOpcode[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wOpcode[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wOpcode[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wOpcode[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wFunct[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wFunct[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wFunct[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wFunct[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wFunct[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wFunct[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wRegDisp[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCALUOp[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wCALUOp[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "woInstr[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wDebug[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultALU[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_ResultFowardB[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+    Warning: Pin "wMEM_MemWrite" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for Power Estimation
+Info: Average toggle rate for this design is 0.000 millions of transitions / sec
+Info: Total thermal power estimate for the design is 224.50 mW
+Info: Quartus II PowerPlay Power Analyzer was successful. 0 errors, 224 warnings
+    Info: Peak virtual memory: 262 megabytes
+    Info: Processing ended: Sun May 13 02:07:20 2012
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:12
+
+

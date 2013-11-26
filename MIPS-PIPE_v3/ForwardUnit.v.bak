@@ -1,0 +1,49 @@
+/*
+ * Unidade de Forward
+ */
+ module ForwardUnit (
+	iEX_NumRs, 
+	iEX_NumRt, 
+	iMEM_NumRd, 
+	iMEM_RegWrite, 
+	iWB_NumRd, 
+	iWB_RegWrite, 
+	oForwardA, 
+	oForwardB
+);
+	input wire [4:0] iEX_NumRs, iEX_NumRt;
+	input wire [4:0] iMEM_NumRd, iWB_NumRd;
+	input wire iMEM_RegWrite, iWB_RegWrite;
+	output wire [1:0] oForwardA, oForwardB;
+	
+	always @(iEX_NumRs,iEX_NumRt,iMEM_NumRd,iWB_NumRd, iMEM_RegWrite,iWB_RegWrite)
+	begin
+		if ((iMEM_RegWrite) & (iMEM_NumRd!=0) & (iMEM_NumRd==iEX_NumRs))
+		begin
+			oForwardA <= 2'b10;
+		end
+		else begin
+			if ((iWB_RegWrite) & (iWB_NumRd!=0) & (iMEM_NumRd!=iEX_NumRs) & (iWB_NumRd==iEX_NumRs))
+			begin
+				oForwardA <= 2'b01;
+			end
+			else begin
+				oForwardA <= 2'b00;
+			end
+		end
+		if ((iMEM_RegWrite) & (iMEM_NumRd!=0) & (iMEM_NumRd==iEX_NumRt))
+		begin
+			oForwardB <= 2'b10;
+		end
+		else begin
+			if ((iWB_RegWrite) & (iWB_NumRd!=0) & (iMEM_NumRd!=iEX_NumRt) & (iWB_NumRd==iEX_NumRt))
+			begin
+				oForwardB <= 2'b01;
+			end
+			else begin
+				oForwardB <= 2'b00;
+			end
+		end
+	end 
+	
+endmodule

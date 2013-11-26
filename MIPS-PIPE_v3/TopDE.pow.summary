@@ -1,0 +1,12 @@
+PowerPlay Power Analyzer Status : Successful - Sun May 13 02:07:19 2012
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : TopDE
+Top-level Entity Name : MIPS
+Family : Cyclone II
+Device : EP2C70F896C6
+Power Models : Final
+Total Thermal Power Dissipation : 224.50 mW
+Core Dynamic Thermal Power Dissipation : 0.00 mW
+Core Static Thermal Power Dissipation : 155.06 mW
+I/O Thermal Power Dissipation : 69.44 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data
